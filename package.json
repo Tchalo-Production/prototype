@@ -1,12 +1,13 @@
 {
-  "name": "prototype",
+  "name": "mediatest",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",
-    "bundle": "node node_modules/react-360/scripts/bundle.js",
+    "bundle": "node node_modules/react-360/scripts/bundle.js && sh scripts/copy-assets.sh",
     "open": "node -e \"require('xopen')('http://localhost:8081/index.html')\"",
     "devtools": "react-devtools",
+    "deploy": "node scripts/deploy.js",
     "test": "jest"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "babel-jest": "^19.0.0",
     "babel-preset-react-native": "^1.9.1",
+    "gh-pages": "^2.1.1",
     "jest": "^19.0.2",
     "react-devtools": "^2.5.2",
     "react-test-renderer": "16.0.0",
